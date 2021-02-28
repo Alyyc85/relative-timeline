@@ -1,0 +1,19 @@
+button {
+  padding: 8px 16px;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  color: white;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background: var(--primary-darken);
+    border: 2px solid var(--primary-darken);
+  }
+  &.selected,
+  &:focus {
+    background: var(--primary-darken);
+    border: 2px dashed white;
+    outline: none;
+  }
+}

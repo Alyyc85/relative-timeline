@@ -1,0 +1,109 @@
+.container {
+  height: 100%;
+  overflow: auto;
+  height: calc(100vh - 80px);
+  padding: 0 8px;
+  display: grid;
+  row-gap: 24px;
+  &::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--aside-bg);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--primary);
+  }
+}
+.content-body {
+  background: var(--timeline-bg);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+///
+
+.date {
+  grid-area: date;
+}
+.item {
+  position: relative;
+  display: grid;
+  row-gap: 24px;
+  &.alternate-left,
+  &.alternate-right {
+    grid-template-columns: 1fr 60px 1fr;
+    grid-template-areas: 'date date date' '. . .';
+  }
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  top: -15px;
+  bottom: -15px;
+  background: var(--aside-bg);
+  left: 29px; // dot left + dotwidth/2 - 1
+}
+.dot {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  top: 30px;
+  left: 15px;
+  border-radius: 50%;
+}
+
+.content {
+  display: grid;
+  position: relative;
+  &.left {
+    grid-template-columns: 80px 1fr;
+  }
+}
+
+@mixin grLeft {
+  .graphic {
+    position: absolute;
+    left: -60px;
+    top: 0;
+    bottom: 0;
+  }
+}
+@mixin grRight {
+  .graphic {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.content.alternate-right {
+  &.even {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    @include grLeft();
+  }
+  &.odd {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    @include grRight();
+  }
+}
+.content.alternate-left {
+  &.even {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    @include grRight();
+  }
+  &.odd {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    @include grLeft();
+  }
+}

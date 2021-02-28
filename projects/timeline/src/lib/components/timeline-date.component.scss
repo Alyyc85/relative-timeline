@@ -1,0 +1,21 @@
+.date {
+  height: 18px;
+  display: flex;
+  align-items: center;
+  .date-content {
+    height: 14px;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    width: 100%;
+    align-items: center;
+    column-gap: 16px;
+    color: var(--primary);
+    text-align: center;
+    padding: 0 100px;
+    .line {
+      height: 1px;
+      border-bottom: 1px solid var(--primary);
+    }
+  }
+}
