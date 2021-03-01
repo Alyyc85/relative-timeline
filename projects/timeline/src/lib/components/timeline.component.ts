@@ -45,6 +45,7 @@ import { TimelineService } from '../services';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['timeline.component.scss'],
+  providers: [TimelineService],
 })
 export class TimelineComponent implements OnChanges, OnDestroy {
   private _destroy$ = new Subject<void>();
