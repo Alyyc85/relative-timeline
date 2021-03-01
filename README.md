@@ -16,6 +16,7 @@ A simple demo for history timeline view created with [Angular CLI](https://githu
 * It doesn't need the amount of items fetched, because it calculates them based on the array.length in response
 * This timeline has 3 different layouts: left | alternate-left | alternate-right
 * This timeline allows dynamic templates for the item, you have to pass a component ref and an injector in the timeline data model
+* This timeline supports infinite-scroll
 * This projects includes a simple sketch for theming the app and theming the timeline too
 
 ### Demo
